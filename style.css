@@ -1,0 +1,105 @@
+#t {
+  display: none;
+}
+
+body {
+  --bg: #0a0804;
+  --surface: #141007;
+  --border: #2e2410;
+  --text: #b89d6a;
+  --text-hi: #f5e9c8;
+  --accent: #f7d87c;
+  background: var(--bg);
+  margin: 0;
+  font-family: "DM Mono", monospace;
+}
+
+/* light theme when checkbox is checked */
+#t:checked ~ body {
+  --bg: #fdfaf3;
+  --surface: #f0e6cc;
+  --border: #d4c08a;
+  --text: #6b4e1a;
+  --text-hi: #1a1207;
+  --accent: #8a6300;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.4rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.links a {
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: var(--accent);
+}
+
+/* toggle */
+.toggle-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 0.85rem;
+  color: var(--text);
+}
+
+.track {
+  width: 40px;
+  height: 21px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--accent);
+  transition: transform 0.3s;
+}
+
+#t:checked ~ body label .thumb {
+  transform: translateX(19px);
+}
